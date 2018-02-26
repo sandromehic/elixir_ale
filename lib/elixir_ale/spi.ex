@@ -123,7 +123,7 @@ defmodule ElixirALE.SPI do
       {_, {:data, response}} ->
         {:ok, :erlang.binary_to_term(response)}
 
-      _ ->
+      {:EXIT, _port, _reason} ->
         :error
     end
   end
